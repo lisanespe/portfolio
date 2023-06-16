@@ -1,0 +1,44 @@
+<!-- curriculum.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="section">
+   <h1>Lisandro Espejo -  Sociologyst - BI Analyst - Data Engineer</h1>
+    </div>
+
+    <div class="section">
+    <h2>About Me</h2>
+    <h4>{{ about.short_description }}</h4>
+    <p>{{ about.description }}</p>
+  </div>
+  
+  <div class="section">
+    <h2>Working Experiences</h2>
+    <p>{{  }}</p>
+  </div>
+  
+  <div class="section">
+    <h2>Skills</h2>
+    <p>HTML</p>
+    <div class="skill-bar">
+      <div class="skill-bar-inner" style="width: 90%;"></div>
+    </div>
+    <p>CSS</p>
+    <div class="skill-bar">
+      <div class="skill-bar-inner" style="width: 80%;"></div>
+    </div>
+    <p>JavaScript</p>
+    <div class="skill-bar">
+      <div class="skill-bar-inner" style="width: 70%;"></div>
+    </div>
+  </div>
+</body>
+</html>
+
