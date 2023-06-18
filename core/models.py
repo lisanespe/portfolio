@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 # About Model
@@ -26,10 +27,10 @@ class PersonalProjects(models.Model):
 
 class RecentWork(models.Model):
     title = models.CharField(max_length=100, verbose_name="Work title")
-    begindate = models.DateField
-    enddate = models.DateField
-    description = models.TextField()
-    tecnologies = models.CharField(max_length=100)
+    begindate = models.DateField(default=timezone.now)
+    enddate = models.DateField(default=timezone.now)
+    description = models.TextField(null=True)
+    tecnologies = models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to="works")
 
     def __str__(self):
@@ -64,4 +65,24 @@ class Tool(models.Model):
         verbose_name_plural = 'Tools'
 
     def __str__(self):
+        return self.name
+
+
+class Course(models.Model):
+    """Model definition for Course."""
+
+    # TODO: Define fields here
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    date = models.DateField(default=timezone.now)
+    institution = models.CharField(max_length=50)
+    certificate = models.ImageField(upload_to="course")
+
+    class Meta:
+        """Meta definition for Course."""
+
+        verbose_name = 'Course'
+        verbose_name_plural = 'Courses'
+
+    def __str__(self, arg):
         return self.name
